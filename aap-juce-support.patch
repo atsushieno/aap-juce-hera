@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9f59538..4bf0211 100644
+index 9f59538..8fe9977 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -16,12 +16,37 @@ if(HERA_FORCE_DEBUG)
+@@ -16,12 +16,38 @@ if(HERA_FORCE_DEBUG)
      "JUCE_FORCE_DEBUG=1")
  endif()
  
@@ -26,6 +26,7 @@ index 9f59538..4bf0211 100644
 +find_library(egl "EGL")
 +set(cpufeatures_lib "cpufeatures")
 +set(oboe_lib "oboe")
++set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 +
 +endif (ANDROID)
 +# <-- end JUCEAAP specific
@@ -41,7 +42,7 @@ index 9f59538..4bf0211 100644
    IS_SYNTH TRUE
    NEEDS_MIDI_INPUT TRUE
    NEEDS_MIDI_OUTPUT FALSE
-@@ -137,3 +162,16 @@ target_link_libraries(Hera
+@@ -137,3 +163,16 @@ target_link_libraries(Hera
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
    target_compile_options(Hera PRIVATE "-Wall")
  endif()
