@@ -1,0 +1,66 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9f59538..4bf0211 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,12 +16,37 @@ if(HERA_FORCE_DEBUG)
+     "JUCE_FORCE_DEBUG=1")
+ endif()
+ 
++
++# begin JUCEAAP specific -->
++# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
++include_directories(
++        "${AAP_DIR}/native/androidaudioplugin/core/include"
++        "${AAP_DIR}/native/plugin-api/include"
++        )
++
++juce_add_module(
++	${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
++
++if (ANDROID)
++
++# dependencies
++find_library(log "log")
++find_library(android "android")
++find_library(glesv2 "GLESv2")
++find_library(egl "EGL")
++set(cpufeatures_lib "cpufeatures")
++set(oboe_lib "oboe")
++
++endif (ANDROID)
++# <-- end JUCEAAP specific
++
++
+ juce_add_plugin(Hera
+   PLUGIN_CODE Hera
+   PLUGIN_MANUFACTURER_CODE AcEl
+   PRODUCT_NAME "Hera"
+   COMPANY_NAME "A/C Electronics"
+-  FORMATS AU VST3
++  FORMATS AU Standalone
+   IS_SYNTH TRUE
+   NEEDS_MIDI_INPUT TRUE
+   NEEDS_MIDI_OUTPUT FALSE
+@@ -137,3 +162,16 @@ target_link_libraries(Hera
+ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+   target_compile_options(Hera PRIVATE "-Wall")
+ endif()
++
++### AAP except for module
++
++target_link_libraries(Hera
++	PRIVATE
++	juceaap_audio_plugin_client
++        ${log}
++        ${android}
++        ${glesv2}
++        ${egl}
++        ${cpufeatures_lib}
++        )
++
+diff --git a/Thirdparty/JUCE b/Thirdparty/JUCE
+--- a/Thirdparty/JUCE
++++ b/Thirdparty/JUCE
+@@ -1 +1 @@
+-Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d
++Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d-dirty

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugins>
+  <plugin name="Hera" category="Synth" author="A/C Electronics" manufacturer=""
+          unique-id="juceaap:48657261" library="libHera_Standalone.so"
+          entrypoint="GetJuceAAPFactoryStandalone" assets="">
+    <ports>
+      <port name="VCA depth" direction="input" maximum="1.0" content="other"/>
+      <port name="VCA type" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="DCO PWM depth" direction="input" maximum="1.0" content="other"/>
+      <port name="DCO PWM modulator" direction="input" default="0.0" maximum="2.0"
+            content="other"/>
+      <port name="DCO saw level" direction="input" maximum="1.0" content="other"/>
+      <port name="DCO pulse level" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="DCO sub level" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="DCO noise level" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="DCO range" direction="input" maximum="2.0" content="other"/>
+      <port name="DCO pitch mod depth" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="VCF cutoff" direction="input" maximum="1.0" content="other"/>
+      <port name="VCF resonance" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="VCF envelope mod depth" direction="input" minimum="-1.0"
+            maximum="1.0" content="other"/>
+      <port name="VCF LFO mod depth" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="VCF keyboard mod depth" direction="input" default="0.0"
+            maximum="1.0" content="other"/>
+      <port name="VCF bend depth" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Envelope attack" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Envelope decay" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Envelope sustain" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Envelope release" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="LFO trigger mode" direction="input" maximum="1.0" content="other"/>
+      <port name="LFO rate" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="LFO delay" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="HPF" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="Chorus I" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port name="Chorus II" direction="input" default="0.0" maximum="1.0"
+            content="other"/>
+      <port direction="output" content="audio" name="Left"/>
+      <port direction="output" content="audio" name="Right"/>
+      <port direction="input" content="midi" name="MIDI input"/>
+    </ports>
+  </plugin>
+</plugins>

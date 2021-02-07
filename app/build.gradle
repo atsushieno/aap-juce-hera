@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+
+android {
+    compileSdkVersion 30
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    defaultConfig {
+        applicationId "org.androidaudioplugin.samples.hera"
+        minSdkVersion    29
+        targetSdkVersion 30
+        externalNativeBuild {
+            cmake {
+                arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : ''}", "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : ''}", "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : ''}", "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti"
+            }
+        }
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+
+    sourceSets {
+        main.java.srcDirs +=
+            ["../external/Hera/Thirdparty/JUCE/modules/juce_gui_basics/native/javaopt/app"]
+        main.res.srcDirs +=
+            []
+    }
+
+    dependencies {
+        implementation "androidx.startup:startup-runtime:1.0.0"
+        implementation "org.androidaudioplugin:androidaudioplugin:0.6.5"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+dependencies {
+    implementation "androidx.core:core-ktx:1.3.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
