@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9f59538..8fe9977 100644
+index 9f59538..190a777 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -16,12 +16,38 @@ if(HERA_FORCE_DEBUG)
@@ -14,8 +14,8 @@ index 9f59538..8fe9977 100644
 +        "${AAP_DIR}/native/plugin-api/include"
 +        )
 +
-+juce_add_module(
-+	${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
++juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
++juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_processors)
 +
 +if (ANDROID)
 +
@@ -42,7 +42,7 @@ index 9f59538..8fe9977 100644
    IS_SYNTH TRUE
    NEEDS_MIDI_INPUT TRUE
    NEEDS_MIDI_OUTPUT FALSE
-@@ -137,3 +163,16 @@ target_link_libraries(Hera
+@@ -137,3 +163,17 @@ target_link_libraries(Hera
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
    target_compile_options(Hera PRIVATE "-Wall")
  endif()
@@ -52,6 +52,7 @@ index 9f59538..8fe9977 100644
 +target_link_libraries(Hera
 +	PRIVATE
 +	juceaap_audio_plugin_client
++	juceaap_audio_processors
 +        ${log}
 +        ${android}
 +        ${glesv2}
