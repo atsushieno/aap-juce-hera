@@ -27,7 +27,7 @@ endif ()
 
 # defs, some are specific to Android and need definisions in prior to `add_subdirectory(JUCE)`.
 add_definitions(
-    "-DJUCE_ANDROID=1" 
+    "-DJUCE_ANDROID=1"
     "-DJUCE_ANDROID_API_VERSION=16"
     "-DJUCE_PUSH_NOTIFICATIONS=1" 
     "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"com/rmsl/juce/JuceActivity\"" 
