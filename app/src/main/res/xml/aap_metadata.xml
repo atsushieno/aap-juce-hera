@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugins xmlns="urn:org.androidaudioplugin.core" xmlns:pp="urn:org.androidaudioplugin.port">
-  <plugin name="Hera" category="Synth" author="A/C Electronics" manufacturer=""
+  <plugin name="Hera" category="Instrument" author="A/C Electronics" manufacturer=""
           unique-id="juceaap:48657261" library="libHera_Standalone.so"
           entrypoint="GetJuceAAPFactoryStandalone" assets="">
     <ports>

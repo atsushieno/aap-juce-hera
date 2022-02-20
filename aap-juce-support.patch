@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9f59538..190a777 100644
+index 58f9aff..0f0f2e3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -16,12 +16,38 @@ if(HERA_FORCE_DEBUG)
+@@ -20,12 +20,37 @@ if(HERA_FORCE_DEBUG)
      "JUCE_FORCE_DEBUG=1")
  endif()
  
@@ -10,8 +10,7 @@ index 9f59538..190a777 100644
 +# begin JUCEAAP specific -->
 +# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
 +include_directories(
-+        "${AAP_DIR}/native/androidaudioplugin/core/include"
-+        "${AAP_DIR}/native/plugin-api/include"
++        "${AAP_DIR}/include"
 +        )
 +
 +juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
@@ -42,7 +41,7 @@ index 9f59538..190a777 100644
    IS_SYNTH TRUE
    NEEDS_MIDI_INPUT TRUE
    NEEDS_MIDI_OUTPUT FALSE
-@@ -137,3 +163,17 @@ target_link_libraries(Hera
+@@ -147,3 +172,17 @@ target_link_libraries(Hera
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
    target_compile_options(Hera PRIVATE "-Wall")
  endif()

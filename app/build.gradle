@@ -27,9 +27,9 @@ android {
     }
 
     dependencies {
-        implementation "androidx.startup:startup-runtime:1.1.0"
-        implementation "org.androidaudioplugin:androidaudioplugin:0.6.22"
-        implementation "org.androidaudioplugin:androidaudioplugin-midi-device-service:0.6.22"
+        implementation "androidx.startup:startup-runtime:1.1.1"
+        implementation "org.androidaudioplugin:androidaudioplugin:0.7.0"
+        implementation "org.androidaudioplugin:androidaudioplugin-midi-device-service:0.7.0"
     }
 
     externalNativeBuild {
