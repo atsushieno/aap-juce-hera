@@ -42,9 +42,10 @@
     </service>
 
     <provider android:name="androidx.startup.InitializationProvider"
-        android:authorities="${applicationId}.androidx-startup"
+        android:authorities="${applicationId}.juce_app_initializer"
         android:exported="false"
-        tools:node="merge">
+        tools:node="merge"
+        tools:replace="android:authorities">
         <meta-data android:name="dev.atsushieno.juce.JuceAppInitializer" android:value="androidx.startup" />
     </provider>
   </application>
