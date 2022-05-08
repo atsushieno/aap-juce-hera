@@ -4,6 +4,9 @@
   <plugin name="Hera" category="Instrument" author="A/C Electronics" manufacturer=""
           unique-id="juceaap:48657261" library="libHera_Standalone.so"
           entrypoint="GetJuceAAPFactoryStandalone" assets="">
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v1" />
+    </extensions>
     <ports>
       <port name="VCA depth" direction="input" pp:maximum="1.0" content="other"/>
       <port name="VCA type" direction="input" pp:default="0.0" pp:maximum="1.0"
