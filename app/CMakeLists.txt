@@ -22,7 +22,7 @@ if ("${AAP_JUCE_DIR}" STREQUAL "")
 set (AAP_JUCE_DIR "../../external/aap-juce")
 endif ()
 if ("${AAP_DIR}" STREQUAL "")
-set (AAP_DIR "../../external/android-audio-plugin-framework")
+set (AAP_DIR "../../external/aap-core")
 endif ()
 
 # defs, some are specific to Android and need definisions in prior to `add_subdirectory(JUCE)`.
