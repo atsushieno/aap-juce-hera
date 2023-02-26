@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugins xmlns="urn:org.androidaudioplugin.core">
-  <plugin name="AAP Hera" category="Instrument" author="AAP / A/C Electronics" manufacturer=""
+  <plugin name="Hera" category="Instrument" author="A/C Electronics" manufacturer=""
           unique-id="juceaap:48657261" library="libHera_Standalone.so"
           entrypoint="GetJuceAAPFactoryStandalone" assets="">
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/presets/v1"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v1"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/midi2/v1"/>
     </extensions>
     <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
       <parameter id="0" name="VCA depth" direction="input" minimum="0.0" maximum="1.0"
