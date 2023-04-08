@@ -3,6 +3,9 @@ plugins {
     id 'kotlin-android'
 }
 
+kotlin {
+    jvmToolchain(11)
+}
 
 android {
     compileSdkVersion 33
@@ -32,6 +35,7 @@ android {
         implementation libs.startup.runtime
         implementation libs.aap.core
         implementation libs.aap.midi.device.service
+        implementation libs.aap.ui.web
     }
 
     externalNativeBuild {
@@ -45,4 +49,10 @@ android {
     }
 
     ndkVersion libs.versions.ndk.get()
+
+    // FIXME: remove this once we upgraded to Gradle 8.1 (AGP issue)
+    compileOptions {
+        sourceCompatibility = 11
+        targetCompatibility = 11
+    }
 }

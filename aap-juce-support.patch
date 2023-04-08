@@ -22,10 +22,10 @@ index 58f9aff..6217cdf 100644
 +        "${AAP_DIR}/include"
 +)
 +
-+juce_add_module(${AAP_JUCE_DIR}/aap-modules/juceaap_audio_plugin_client)
++juce_add_module(${AAP_JUCE_DIR}/aap-modules/aap_audio_processors)
 +target_link_libraries(Hera
 +        PRIVATE
-+        juceaap_audio_plugin_client
++        aap_audio_processors
 +        )
 +
 +if (ANDROID)
