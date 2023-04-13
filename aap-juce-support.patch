@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 58f9aff..6217cdf 100644
+index 58f9aff..3b75490 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -25,7 +25,7 @@ juce_add_plugin(Hera
@@ -11,7 +11,7 @@ index 58f9aff..6217cdf 100644
    IS_SYNTH TRUE
    NEEDS_MIDI_INPUT TRUE
    NEEDS_MIDI_OUTPUT FALSE
-@@ -147,3 +147,40 @@ target_link_libraries(Hera
+@@ -147,3 +147,43 @@ target_link_libraries(Hera
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
    target_compile_options(Hera PRIVATE "-Wall")
  endif()
@@ -39,7 +39,10 @@ index 58f9aff..6217cdf 100644
 +set(oboe_lib "oboe")
 +set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 +
-+add_compile_definitions([[JUCE_DONT_AUTO_OPEN_MIDI_DEVICES_ON_MOBILE=1]])
++add_compile_definitions(
++        [[JUCE_ANDROID=1]]
++        [[JUCE_DONT_AUTO_OPEN_MIDI_DEVICES_ON_MOBILE=1]]
++)
 +
 +target_link_libraries(Hera
 +        PRIVATE
@@ -52,9 +55,3 @@ index 58f9aff..6217cdf 100644
 +
 +endif (ANDROID)
 +# <-- end JUCEAAP specific
-diff --git a/Thirdparty/JUCE b/Thirdparty/JUCE
---- a/Thirdparty/JUCE
-+++ b/Thirdparty/JUCE
-@@ -1 +1 @@
--Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d
-+Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d-dirty
