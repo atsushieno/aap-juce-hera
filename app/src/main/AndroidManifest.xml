@@ -3,8 +3,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:versionCode="1" android:versionName="1.0.0"
-    package="org.androidaudioplugin.ports.juce.hera">
+    android:versionCode="1" android:versionName="1.0.0">
 
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true" android:xlargeScreens="true"/>
 
@@ -30,6 +29,9 @@
       <meta-data
           android:name="org.androidaudioplugin.AudioPluginService.V3#Plugins"
           android:resource="@xml/aap_metadata"/>
+    </service>
+    <service android:name="org.androidaudioplugin.AudioPluginViewService" android:exported="true"
+        android:label="AAPInstrumentSample">
     </service>
     <service android:name="org.androidaudioplugin.midideviceservice.StandaloneAudioPluginMidiDeviceService"
         android:permission="android.permission.BIND_MIDI_DEVICE_SERVICE"

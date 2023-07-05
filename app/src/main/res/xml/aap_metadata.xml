@@ -3,68 +3,17 @@
 <plugins xmlns="urn:org.androidaudioplugin.core">
   <plugin name="Hera" category="Instrument" author="A/C Electronics" developer="A/C Electronics"
           unique-id="juceaap:48657261" library="libHera_Standalone.so"
-          entrypoint="GetJuceAAPFactoryStandalone">
+          entrypoint="GetJuceAAPFactoryStandalone"
+          gui:ui-view-factory="org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory"
+          xmlns:gui="urn://androidaudioplugin.org/extensions/gui">
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/parameters/v2.1"/>
       <extension uri="urn://androidaudioplugin.org/extensions/presets/v2"/>
       <extension uri="urn://androidaudioplugin.org/extensions/state/v2"/>
       <extension uri="urn://androidaudioplugin.org/extensions/midi2/v2"/>
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v2"/>
     </extensions>
-    <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
-      <parameter id="0" name="VCA depth" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.5" content="other"/>
-      <parameter id="1" name="VCA type" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="2" name="DCO PWM depth" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.5" content="other"/>
-      <parameter id="3" name="DCO PWM modulator" direction="input" minimum="0.0"
-                 maximum="2.0" default="0.0" content="other"/>
-      <parameter id="4" name="DCO saw level" direction="input" minimum="0.0" maximum="1.0"
-                 default="1.0" content="other"/>
-      <parameter id="5" name="DCO pulse level" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="6" name="DCO sub level" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="7" name="DCO noise level" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="8" name="DCO range" direction="input" minimum="0.0" maximum="2.0"
-                 default="0.25" content="other"/>
-      <parameter id="9" name="DCO pitch mod depth" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="10" name="VCF cutoff" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.5" content="other"/>
-      <parameter id="11" name="VCF resonance" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="12" name="VCF envelope mod depth" direction="input" minimum="-1.0"
-                 maximum="1.0" default="0.75" content="other"/>
-      <parameter id="13" name="VCF LFO mod depth" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="14" name="VCF keyboard mod depth" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="15" name="VCF bend depth" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="16" name="Envelope attack" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="17" name="Envelope decay" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="18" name="Envelope sustain" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="19" name="Envelope release" direction="input" minimum="0.0"
-                 maximum="1.0" default="0.0" content="other"/>
-      <parameter id="20" name="LFO trigger mode" direction="input" minimum="0.0"
-                 maximum="1.0" default="1.0" content="other"/>
-      <parameter id="21" name="LFO rate" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="22" name="LFO delay" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="23" name="HPF" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="24" name="Chorus I" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-      <parameter id="25" name="Chorus II" direction="input" minimum="0.0" maximum="1.0"
-                 default="0.0" content="other"/>
-    </parameters>
     <ports>
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>
