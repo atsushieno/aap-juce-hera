@@ -9,15 +9,16 @@
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v2"/>
       <extension uri="urn://androidaudioplugin.org/extensions/parameters/v2.1"/>
-      <extension uri="urn://androidaudioplugin.org/extensions/presets/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v3"/>
       <extension uri="urn://androidaudioplugin.org/extensions/state/v2"/>
-      <extension uri="urn://androidaudioplugin.org/extensions/midi2/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/midi2/v3"/>
       <extension uri="urn://androidaudioplugin.org/extensions/gui/v2"/>
     </extensions>
     <ports>
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>
       <port direction="input" content="midi2" name="MIDI input"/>
+      <port direction="output" content="midi2" name="MIDI output"/>
     </ports>
   </plugin>
 </plugins>
