@@ -9,7 +9,7 @@ kotlin {
 
 android {
     namespace "org.androidaudioplugin.ports.juce.hera"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId "org.androidaudioplugin.ports.juce.hera"
