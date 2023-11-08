@@ -2,7 +2,6 @@ rootProject.name = 'Hera'
 include ':app'
 
 // When debugging, enable these lines (and change `implementation` section in build.gradle.
-/*
 include ':androidaudioplugin'
 include ':androidaudioplugin-midi-device-service'
 include ':androidaudioplugin-ui-web'
@@ -15,4 +14,3 @@ project(':androidaudioplugin-manager').projectDir = new File('external/aap-core/
 project(':androidaudioplugin-ui-compose').projectDir = new File('external/aap-core/androidaudioplugin-ui-compose')
 project(':androidaudioplugin-ui-compose-app').projectDir = new File('external/aap-core/androidaudioplugin-ui-compose-app')
 project(':androidaudioplugin-ui-web').projectDir = new File('external/aap-core/androidaudioplugin-ui-web')
-*/
