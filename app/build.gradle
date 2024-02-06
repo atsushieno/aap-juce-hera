@@ -4,7 +4,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 android {
@@ -33,16 +33,17 @@ android {
     dependencies {
         implementation libs.androidx.core.ktx
         implementation libs.startup.runtime
-        /*
         implementation libs.aap.core
         implementation libs.aap.midi.device.service
         implementation libs.aap.ui.web
         implementation libs.aap.ui.compose
-        */
+        // switch to them when you want to debug into aap-core.
+        /*
         implementation project(":androidaudioplugin")
         implementation project(":androidaudioplugin-midi-device-service")
         implementation project(":androidaudioplugin-ui-web")
         implementation project(":androidaudioplugin-ui-compose")
+         */
     }
 
     externalNativeBuild {
@@ -56,10 +57,4 @@ android {
     }
 
     ndkVersion libs.versions.ndk.get()
-
-    // FIXME: remove this once we upgraded to Gradle 8.1 (AGP issue)
-    compileOptions {
-        sourceCompatibility = 11
-        targetCompatibility = 11
-    }
 }
