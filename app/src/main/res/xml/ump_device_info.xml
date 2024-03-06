@@ -1,0 +1,6 @@
+<devices>
+    <device name="Hera" manufacturer="androidaudioplugin.org" product="Hera">
+        <port name="input" />
+    </device>
+</devices>
+
