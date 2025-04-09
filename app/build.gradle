@@ -14,6 +14,10 @@ android {
     defaultConfig {
         applicationId "org.androidaudioplugin.ports.juce.hera"
         minSdkVersion    libs.versions.android.minSdk.get().toInteger()
+        ndk {
+            // should we make it customizable? We skip others just to reduce build time.
+            abiFilters "x86_64", "arm64-v8a"
+        }
         externalNativeBuild {
             cmake {
                 arguments "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : ''}", "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : ''}", "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : ''}", "-DANDROID_STL=c++_shared", "-DANDROID_CPP_FEATURES=exceptions rtti"
