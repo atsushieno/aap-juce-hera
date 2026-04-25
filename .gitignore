@@ -4,4 +4,4 @@ local.properties
 build
 .gradle
 dist
-
+.DS_Store

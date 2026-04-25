@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 58f9aff..9d82786 100644
+index 58f9aff..c8170f0 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -25,7 +25,7 @@ juce_add_plugin(Hera
@@ -11,7 +11,7 @@ index 58f9aff..9d82786 100644
    IS_SYNTH TRUE
    NEEDS_MIDI_INPUT TRUE
    NEEDS_MIDI_OUTPUT FALSE
-@@ -147,3 +147,45 @@ target_link_libraries(Hera
+@@ -147,3 +147,48 @@ target_link_libraries(Hera
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
    target_compile_options(Hera PRIVATE "-Wall")
  endif()
@@ -35,6 +35,7 @@ index 58f9aff..9d82786 100644
 +find_library(android "android")
 +find_library(glesv2 "GLESv2")
 +find_library(egl "EGL")
++find_package(androidaudioplugin CONFIG REQUIRED)
 +set(cpufeatures_lib "cpufeatures")
 +set(oboe_lib "oboe")
 +set(CMAKE_CXX_FLAGS_RELEASE "-O3")
@@ -53,7 +54,15 @@ index 58f9aff..9d82786 100644
 +        ${glesv2}
 +        ${egl}
 +        ${cpufeatures_lib}
++        androidaudioplugin::androidaudioplugin
++        aap_audio_processors
 +        )
 +
 +endif (ANDROID)
 +# <-- end JUCEAAP specific
+diff --git a/Thirdparty/JUCE b/Thirdparty/JUCE
+--- a/Thirdparty/JUCE
++++ b/Thirdparty/JUCE
+@@ -1 +1 @@
+-Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d
++Subproject commit 7c797c8105c2d41872e6e8d08972624f0afd335d-dirty

@@ -4,7 +4,7 @@
   <plugin name="Hera" category="Instrument" author="A/C Electronics" developer="A/C Electronics"
           unique-id="juceaap:48657261" library="libHera_Standalone.so"
           entrypoint="GetJuceAAPFactoryStandalone"
-          gui:ui-view-factory="org.androidaudioplugin.ui.compose.ComposeAudioPluginViewFactory"
+          gui:ui-view-factory="org.androidaudioplugin.juce.JuceAudioPluginViewFactory"
           xmlns:gui="urn://androidaudioplugin.org/extensions/gui">
     <extensions>
       <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v3"/>

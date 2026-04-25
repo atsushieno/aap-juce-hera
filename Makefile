@@ -15,6 +15,8 @@ PATCH_DEPTH=1
 
 # JUCE patches if any
 JUCE_PATCHES= \
-	$(shell pwd)/external/aap-juce/juce-patches/6.0.5/disable-cgwindowlistcreateimage.patch
+	$(AAP_JUCE_DIR)/juce-patches/6.0.5/disable-cgwindowlistcreateimage.patch \
+	$(AAP_JUCE_DIR)/juce-patches/6.0.5/support-plugin-ui.patch \
+	$(AAP_JUCE_DIR)/juce-patches/6.0.5/juce-component-peer-view-touch.patch
 
 include $(AAP_JUCE_DIR)/Makefile.cmake-common

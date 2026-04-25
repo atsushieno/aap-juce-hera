@@ -34,7 +34,8 @@ android {
 
     sourceSets {
         main.java.srcDirs +=
-            ["../external/Hera/Thirdparty/JUCE/modules/juce_gui_basics/native/javaopt/app",
+            ["../external/Hera/ThirdParty/JUCE/modules/juce_gui_basics/native/java/app",
+             "../external/Hera/ThirdParty/JUCE/modules/juce_gui_basics/native/javaopt/app",
              "../external/aap-juce/java"]
         main.res.srcDirs +=
             []
@@ -47,6 +48,7 @@ android {
         implementation libs.aap.midi.device.service
         implementation libs.aap.ui.web
         implementation libs.aap.ui.compose
+        implementation libs.aap.ui.compose.app
         // switch to them when you want to debug into aap-core.
         /*
         implementation project(":androidaudioplugin")
