@@ -1,10 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
-}
-
-kotlin {
-    jvmToolchain(17)
 }
 
 android {
@@ -21,7 +16,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments  "-DANDROID=1",
-                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                        "-DCMAKE_BUILD_TYPE=Release",
                         "-DJUCE_DIR=${System.env.JUCE_DIR != null ? System.env.JUCE_DIR : ''}",
                         "-DAAP_DIR=${System.env.AAP_DIR != null ? System.env.AAP_DIR : ''}",
                         "-DAAP_JUCE_DIR=${System.env.AAP_JUCE_DIR != null ? System.env.AAP_JUCE_DIR : ''}",
